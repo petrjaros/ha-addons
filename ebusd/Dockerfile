@@ -13,6 +13,7 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 RUN git clone https://github.com/john30/ebusd.git /build && cmake . && make
+RUN git clone https://github.com/john30/ebusd-configuration.git /config
 
 FROM $BUILD_FROM
 
