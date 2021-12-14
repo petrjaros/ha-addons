@@ -14,6 +14,7 @@ WORKDIR /build
 
 RUN git clone https://github.com/john30/ebusd.git /build && cmake . && make
 RUN git clone https://github.com/john30/ebusd-configuration.git /config
+RUN cp /config/ebusd-2.1.x/en/vaillant/15.470.csv /config/ebusd-2.1.x/en/vaillant/15.450.csv
 
 FROM $BUILD_FROM
 
