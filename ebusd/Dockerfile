@@ -16,6 +16,9 @@ RUN git clone https://github.com/john30/ebusd.git /build && cmake . && make
 
 FROM $BUILD_FROM
 
+RUN apk add --no-cache \
+    git
+
 LABEL Description="ebusd"
 
 RUN apk add --no-cache \
