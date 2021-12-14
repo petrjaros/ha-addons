@@ -13,8 +13,7 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 RUN git clone https://github.com/john30/ebusd.git /build && cmake . && make
-RUN git clone https://github.com/john30/ebusd-configuration.git /config
-RUN cp /config/ebusd-2.1.x/en/vaillant/15.470.csv /config/ebusd-2.1.x/en/vaillant/15.f4500.csv
+RUN git clone https://github.com/petrjaros/ebusd-configuration.git /config
 RUN ln -s /config/ebusd-2.1.x/en /etc/ebusd
 
 FROM $BUILD_FROM
