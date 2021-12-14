@@ -30,7 +30,7 @@ COPY --from=builder /build/src/ebusd/ebusd /usr/local/bin/ebusd
 COPY --from=builder /build/src/tools/ebusctl /usr/local/bin/ebusctl
 
 RUN git clone https://github.com/john30/ebusd-configuration.git /config
-RUN ln -s /config/latest/en/15.f43.csv /config/latest/en/15.f45.csv
+RUN ln -s /config/latest/en/vaillant/15.f43.csv /config/latest/en/vaillant/15.f45.csv
 
 WORKDIR /
 
