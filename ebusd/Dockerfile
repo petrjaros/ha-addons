@@ -13,8 +13,6 @@ RUN apk add --no-cache \
 WORKDIR /build
 
 RUN git clone https://github.com/john30/ebusd.git /build && cmake . && make
-RUN git clone https://github.com/petrjaros/ebusd-configuration.git /config
-RUN ln -s /config/ebusd-2.1.x/en /etc/ebusd
 
 FROM $BUILD_FROM
 
@@ -27,6 +25,9 @@ RUN apk add --no-cache \
 
 COPY --from=builder /build/src/ebusd/ebusd /usr/local/bin/ebusd
 COPY --from=builder /build/src/tools/ebusctl /usr/local/bin/ebusctl
+
+RUN git clone https://github.com/john30/ebusd-configuration.git /config
+RUN ln -s /config/latest/en/15.f43.csv /config/latest/en/15.f45.csv
 
 WORKDIR /
 
