@@ -37,4 +37,4 @@ schema:
   mqttlog: "bool?"
   mqttretain: "bool?"
 map: 
-  config
+  - config
